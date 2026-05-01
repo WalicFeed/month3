@@ -7,7 +7,7 @@ def main(page: ft.Page):
     hello = ft.Text("Hello, Flet!", size=30, color=ft.Colors.BLUE)
 
     count = 0
-    def button_click(obj):
+    def button_click(obj): #e - event(should've putted in e instead of obj)
         nonlocal count
         count += 1
         hello.value = f"Clicked {count} times!"
