@@ -5,9 +5,15 @@ def main(page: ft.Page):
     page.theme_mode = ft.ThemeMode.LIGHT
 
     hello = ft.Text("Hello, Flet!", size=30, color=ft.Colors.BLUE)
-    
+
+    count = 0
+    def button_click(obj):
+        nonlocal count
+        count += 1
+        hello.value = f"Clicked {count} times!"
+        page.update()
     button_text = ft.Text("Click me!")
-    button = ft.Button("Click me!")
+    button = ft.Button("Click me!", icon=ft.Icons.SEND, color=ft.Colors.GREEN, icon_color=ft.Colors.RED, on_click=button_click)
     button_icon = ft.IconButton(ft.Icons.SEND)
 
     name_input = ft.TextField(label="Your name")
