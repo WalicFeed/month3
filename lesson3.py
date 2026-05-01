@@ -17,7 +17,7 @@ def main(page: ft.Page):
         page.update() # page.update() is no longer necessary
 
     text_hello = ft.Text("Hello", color=ft.Colors.RED_900)
-    text_input = ft.TextField(label="Your name")
+    text_input = ft.TextField(label="Your name", on_submit=text_name)
     button = ft.Button("SEND", on_click=text_name)
 
     def theme_update(e):
